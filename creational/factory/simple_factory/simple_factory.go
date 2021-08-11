@@ -32,6 +32,8 @@ func (this *OperationSub) PrintName() {
 type OperationFactory struct{}
 
 // CreateOperation 根据 操作符名称，创建实例对象
+// 如果后期新增新的 操作符，则需要修改这个地方，这方法也是核心方法，
+// 如果处理问题，则会影响到其他对象的创建
 func (this *OperationFactory) CreateOperation(operationName string) IOperation {
 	switch operationName {
 	case "+":
